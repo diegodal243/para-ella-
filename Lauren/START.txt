@@ -1,0 +1,152 @@
+╔══════════════════════════════════════════════════════════╗
+║                 💌 CARTA DE AMOR 💌                      ║
+║               Empieza aquí en 3 pasos                     ║
+╚══════════════════════════════════════════════════════════╝
+
+⚡ PASO 1 - ABRE LA PÁGINA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Busca el archivo: index.html
+2. Haz clic derecho en él
+3. Selecciona "Abrir con"
+4. Elige tu navegador (Chrome, Firefox, Edge, Safari, etc)
+
+✅ ¡La página debería abrirse en tu navegador!
+
+
+🎯 PASO 2 - INTERACTÚA CON LA PÁGINA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Verás un sello rosa 💗 en el centro
+2. Haz clic en el sello
+3. Deberías ver corazones 💕 saliendo
+4. El sello crecerá poco a poco
+5. ¡Repite esto 5 veces!
+6. Después del 5º click, la carta se abrirá ✨
+
+
+🎵 PASO 3 (OPCIONAL) - AGREGAR MÚSICA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+La página funciona perfectamente sin música, pero puedes agregar:
+
+1. Visita uno de estos sitios para descargar música gratis:
+   • https://www.bensound.com (Recomendado)
+   • https://pixabay.com/music
+   • https://www.freepik.com/music
+
+2. Busca "romantic", "love" o "piano"
+
+3. Descarga en formato MP3
+
+4. Coloca el archivo en:
+   Lauren → assets → audio → love-music.mp3
+   (Renómbralo exactamente así: love-music.mp3)
+
+5. Recarga la página en el navegador
+
+¡Listo! La música sonará cuando abras la carta
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 ARCHIVOS IMPORTANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ABRE ESTOS ARCHIVOS:
+✓ index.html ← La página principal (ABRE ESTO EN NAVEGADOR)
+✓ SETUP.html ← Si necesitas ayuda (guía completa)
+
+CONSULTA ESTOS ARCHIVOS (en Notepad o VS Code):
+✓ index.md ← Guía de todos los archivos
+✓ README.md ← Información general
+✓ INSTRUCCIONES-MUSICA.md ← Detalles sobre música
+
+NO TOQUES (a menos que sepas de código):
+✗ css/styles.css ← Estilos (solo si quieres cambiar colores)
+✗ js/script.js ← Lógica (no modificar)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 PERSONALIZAR EL TEXTO (FÁCIL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abre: index.html (con Notepad, VS Code, etc)
+
+2. Busca estas líneas y cambia el texto:
+   • <h1 class="letter-title">Para Ti 💌</h1>
+   • <p class="letter-text">Quería que supieras...</p>
+   • <span class="signature-name">Tu alguien especial</span>
+
+3. Guarda (Ctrl+S)
+
+4. Recarga la página en el navegador (F5)
+
+¡Tus cambios aparecerán inmediatamente!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ SI ALGO NO FUNCIONA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Recarga la página:
+   • Presiona: Ctrl+Shift+R (fuerza recarga sin caché)
+
+2. Abre la consola (F12) y busca errores en rojo
+
+3. Si hay errores, copia el mensaje y busca en Google
+
+4. O abre SETUP.html en tu navegador
+   (tiene solución de problemas detallada)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ CARACTERÍSTICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Sello interactivo (crece con cada click)
+✓ Corazones animados en colores hermosos
+✓ La carta se abre después de 5 clicks
+✓ Texto elegante dentro de la carta
+✓ Corazones flotantes adicionales
+✓ Música de amor (opcional)
+✓ Botón para empezar de nuevo
+✓ Funciona en móvil y PC
+✓ Sin instalación, solo abre en navegador
+✓ Funciona sin internet
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 NAVEGADORES SOPORTADOS
+
+✓ Google Chrome
+✓ Mozilla Firefox
+✓ Microsoft Edge
+✓ Safari (Mac/iPhone)
+✓ Opera
+✓ Navegadores móviles en general
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 COMPARTIR LA PÁGINA
+
+Si quieres enviarla a alguien:
+
+1. Comprimi la carpeta "Lauren" como ZIP
+2. Envíalo por email, WhatsApp, etc
+3. La otra persona solo necesita abrir index.html
+4. ¡Eso es todo!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¡¡¡ YA ESTÁ LISTO !!!
+
+↓  ABRE index.html EN TU NAVEGADOR  ↓
+
+Creado con ❤️ para hacer especial a esa persona
+Sin instalación, sin dependencias, solo HTML/CSS/JS puro
+
+¡Diviértete! 💌✨
