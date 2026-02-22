@@ -1,0 +1,625 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* ==================== SELLO DE LA CARTA ==================== */
+
+.seal-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    z-index: 10;
+}
+
+.seal-container.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.seal-container.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* ==================== CARTA ==================== */
+
+.letter-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.letter-card:hover {
+    transform: scale(1.08) translateY(-5px);
+    filter: drop-shadow(0 10px 25px rgba(233, 30, 99, 0.3));
+}
+
+.letter-card.clicked {
+    animation: cardClickPulse 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cardClickPulse {
+    0% {
+        transform: scale(1) rotateZ(0deg);
+    }
+    25% {
+        transform: scale(1.15) rotateZ(-3deg);
+    }
+    50% {
+        transform: scale(1.2) rotateZ(3deg);
+    }
+    75% {
+        transform: scale(1.1) rotateZ(-1deg);
+    }
+    100% {
+        transform: scale(1) rotateZ(0deg);
+    }
+}
+
+
+.envelope {
+    font-size: 200px;
+    animation: envelopeFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    z-index: 5;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+/* ==================== CORAZONES ANIMADOS ==================== */
+
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    animation: heartExpand 2s ease-out forwards;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.heart.size-1 {
+    font-size: 20px;
+    animation-duration: 1.5s;
+}
+
+.heart.size-2 {
+    font-size: 30px;
+    animation-duration: 2s;
+}
+
+.heart.size-3 {
+    font-size: 40px;
+    animation-duration: 2.5s;
+}
+
+.heart.size-4 {
+    font-size: 50px;
+    animation-duration: 3s;
+}
+
+.heart.size-5 {
+    font-size: 60px;
+    animation-duration: 3.5s;
+}
+
+.heart.size-6 {
+    font-size: 70px;
+    animation-duration: 4s;
+}
+
+.heart.size-7 {
+    font-size: 80px;
+    animation-duration: 4.5s;
+}
+
+.heart.size-8 {
+    font-size: 90px;
+    animation-duration: 5s;
+}
+
+.heart.size-9 {
+    font-size: 100px;
+    animation-duration: 5.5s;
+}
+
+.heart.size-10 {
+    font-size: 110px;
+    animation-duration: 6s;
+}
+
+@keyframes heartExpand {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    10% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1);
+    }
+}
+
+/* Colores de corazones */
+.heart.red {
+    color: #e91e63;
+}
+
+.heart.pink {
+    color: #ff6b9d;
+}
+
+.heart.light-pink {
+    color: #ffb3d9;
+}
+
+.heart.purple {
+    color: #c5a3ff;
+}
+
+.heart.orange {
+    color: #ff9800;
+}
+
+.heart.rose {
+    color: #ff1493;
+}
+
+.heart.salmon {
+    color: #fa8072;
+}
+
+.heart.coral {
+    color: #ff7f50;
+}
+
+.heart.red-light {
+    color: #ff4444;
+}
+
+.heart.magenta {
+    color: #ff00ff;
+}
+
+/* ==================== CONTENIDO DE LA CARTA ==================== */
+
+.letter-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+    z-index: 5;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.letter-content.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+.letter {
+    width: 100%;
+    max-width: 500px;
+    min-height: 700px;
+    background: linear-gradient(180deg, #fff9e6 0%, #fffbf0 50%, #fff9e6 100%);
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 3px rgba(255, 255, 255, 0.9),
+                0 0 40px rgba(233, 30, 99, 0.15);
+    padding: 50px 40px;
+    position: relative;
+    overflow: hidden;
+    animation: letterOpen 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid rgba(233, 30, 99, 0.1);
+}
+
+@keyframes letterOpen {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotateY(90deg) rotateX(20deg);
+    }
+    50% {
+        transform: scale(1.05) rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg) rotateX(0deg);
+    }
+}
+
+.letter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #e91e63, transparent);
+    animation: letterShine 1.2s ease-out;
+}
+
+@keyframes letterShine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.letter::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e91e63, transparent);
+    animation: letterShineReverse 1.2s ease-out 0.1s;
+}
+
+@keyframes letterShineReverse {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+/* Decoraciones */
+.letter-top-decoration,
+.letter-bottom-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.decoration-line {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e91e63, transparent);
+    animation: lineExpand 1s ease-out 0.2s backwards;
+}
+
+@keyframes lineExpand {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 40px;
+        opacity: 1;
+    }
+}
+
+.decoration-flower {
+    font-size: 20px;
+    color: #e91e63;
+    animation: flowerBounce 1.5s ease-out 0.3s backwards;
+}
+
+@keyframes flowerBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.letter-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e91e63, transparent);
+    margin: 25px auto;
+    animation: dividerExpand 1s ease-out 0.4s backwards;
+}
+
+@keyframes dividerExpand {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 80px;
+        opacity: 1;
+    }
+}
+
+.letter-middle-decoration {
+    text-align: center;
+    font-size: 24px;
+    color: #e91e63;
+    margin: 35px 0;
+    animation: decorBounce 1.2s ease-out 0.7s backwards;
+}
+
+@keyframes decorBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.letter-body {
+    text-align: center;
+}
+
+.letter-title {
+    font-size: 36px;
+    color: #e91e63;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.letter-text {
+    font-size: 16px;
+    color: #5c4033;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    font-family: 'Georgia', serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.letter-signature-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.letter-signature {
+    font-size: 15px;
+    color: #d32f2f;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.signature-name {
+    font-size: 22px;
+    color: #e91e63;
+    font-style: italic;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+    letter-spacing: 1px;
+}
+
+/* Animación reveal de texto */
+.reveal-text {
+    overflow: hidden;
+    position: relative;
+}
+
+.reveal-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #fff9e6, #fff9e6);
+    animation: textReveal 0.8s ease-out forwards;
+}
+
+.letter-title.reveal-text::before {
+    animation-delay: 0.5s;
+}
+
+.letter-text:nth-of-type(1).reveal-text::before {
+    animation-delay: 0.8s;
+}
+
+.letter-text:nth-of-type(2).reveal-text::before {
+    animation-delay: 1.1s;
+}
+
+.letter-text:nth-of-type(3).reveal-text::before {
+    animation-delay: 1.4s;
+}
+
+.letter-text:nth-of-type(4).reveal-text::before {
+    animation-delay: 1.7s;
+}
+
+.letter-signature.reveal-text::before {
+    animation-delay: 2s;
+}
+
+.signature-name.reveal-text::before {
+    animation-delay: 2.3s;
+}
+
+@keyframes textReveal {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.letter-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.letter-heart {
+    position: absolute;
+    font-size: 24px;
+    animation: letterHeartFloat 3s ease-out forwards;
+    opacity: 0.7;
+}
+
+@keyframes letterHeartFloat {
+    0% {
+        opacity: 0.8;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0.3);
+    }
+}
+
+/* ==================== BOTÓN REINICIAR ==================== */
+
+.reset-btn {
+    position: absolute;
+    bottom: 50px;
+    padding: 12px 30px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #e91e63 0%, #ff6b9d 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.reset-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.reset-btn:not(.hidden) {
+    opacity: 1;
+    pointer-events: all;
+    animation: buttonAppear 0.6s ease-out 0.5s backwards;
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(233, 30, 99, 0.6);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 15px rgba(233, 30, 99, 0.4);
+}
+
+/* ==================== EFECTO RIPPLE ==================== */
+
+@keyframes rippleAnimation {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+    .envelope {
+        font-size: 120px;
+    }
+
+    .letter-card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .letter {
+        padding: 40px 25px;
+    }
+
+    .letter-title {
+        font-size: 28px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+    }
+}
