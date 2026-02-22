@@ -3,20 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ti 💌</title>
+    <title>Para Ti, Mi Niña 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Fondo de corazones flotantes continuos -->
+    <div id="bgHearts" class="bg-hearts"></div>
+
+    <!-- Partículas brillantes -->
+    <div id="sparkles" class="sparkles-container"></div>
+
     <div class="container">
         <!-- Música de fondo -->
         <audio id="loveMusic" loop>
             <source src="assets/audio/love-music.mp3" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
         </audio>
+
+        <!-- Indicador de clicks -->
+        <div id="clickIndicator" class="click-indicator">
+            <span id="clickText">Toca el sobre 💌</span>
+            <div class="click-progress">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <div class="click-hearts-row">
+                <span class="click-heart" data-index="1">🤍</span>
+                <span class="click-heart" data-index="2">🤍</span>
+                <span class="click-heart" data-index="3">🤍</span>
+                <span class="click-heart" data-index="4">🤍</span>
+                <span class="click-heart" data-index="5">🤍</span>
+            </div>
+        </div>
 
         <!-- Carta clickeable (antes de abrir) -->
         <div id="sealContainer" class="seal-container active">
             <div id="letterCard" class="letter-card">
+                <div class="envelope-glow"></div>
                 <div class="envelope">💌</div>
                 <div id="heartsContainer" class="hearts-container"></div>
             </div>
@@ -25,65 +49,95 @@
         <!-- Contenido de la carta (después de abrir) -->
         <div id="letterContent" class="letter-content hidden">
             <div class="letter">
-                <!-- Decoración superior -->
+                <!-- Borde decorativo superior -->
+                <div class="letter-border-top"></div>
+
+                <!-- Decoración superior con corazones -->
                 <div class="letter-top-decoration">
                     <div class="decoration-line"></div>
-                    <div class="decoration-flower">✿</div>
+                    <div class="decoration-heart">💖</div>
                     <div class="decoration-line"></div>
                 </div>
 
                 <!-- Contenido principal -->
                 <div class="letter-body">
-                    <h1 class="letter-title reveal-text">Para Ti 💌</h1>
-                    
-                    <div class="letter-divider"></div>
-                    
-                    <p class="letter-text reveal-text">
-                        Quería que supieras que te amo y que siempre seras mi chica favorita 
-                    </p>
-                    
-                    <p class="letter-text reveal-text">
-                        Tú haces que los días sean más hermosos, más llenos de color y de sentido.
-                    </p>
-                    
-                    <p class="letter-text reveal-text">
-                        Gracias por ser tú, por estar conmigo, por sonreír cuando más lo necesito.
-                    </p>
-                    
-                    <p class="letter-text reveal-text">
-                        Eres especial, eres importante te amo demaciado mi niña preciosa 💕
+                    <h1 class="letter-title reveal-text">Para Ti, Mi Niña</h1>
+                    <div class="title-hearts">💕 💗 💕</div>
+
+                    <div class="letter-divider">
+                        <span class="divider-heart">♥</span>
+                    </div>
+
+                    <div class="letter-message reveal-text">
+                        <p>
+                            Te amo demasiado, mi niña. No quiero que lo nuestro termine
+                            y quiero que esto siga para siempre.
+                        </p>
+                        <p>
+                            Hice la historia de nosotros, pero ando esperando un poquito más
+                            para dártela, y con muchas cosas más.
+                        </p>
+                        <p>
+                            Esto es el inicio de todo lo que te voy a dar y espero que siempre
+                            estés a mi lado y nunca te vayas.
+                        </p>
+                        <p>
+                            Te amo demasiado y espero que me perdones y que sigamos juntos
+                            para siempre.
+                        </p>
+                    </div>
+
+                    <!-- Decoración central con corazones -->
+                    <div class="letter-heart-divider">
+                        <span>✿</span>
+                        <span>♥</span>
+                        <span>✿</span>
+                        <span>♥</span>
+                        <span>✿</span>
+                    </div>
+
+                    <p class="letter-promise reveal-text">
+                        Siempre juntos, hoy y para siempre 💞
                     </p>
                 </div>
 
-                <!-- Decoración central -->
-                <div class="letter-middle-decoration">
-                    <span>✿ ♡ ✿</span>
-                </div>
-
-                <!-- Firma -->
-                <div class="letter-signature-section">
-                    <p class="letter-signature reveal-text">
-                        Con todo mi corazón,<br>
-                    </p>
-                    <p class="signature-name reveal-text">
-                        Diego
-                    </p>
+                <!-- Firma especial -->
+                <div class="letter-signature-section reveal-text">
+                    <div class="signature-decoration">
+                        <div class="sig-line"></div>
+                        <span class="sig-heart">💖</span>
+                        <div class="sig-line"></div>
+                    </div>
+                    <p class="letter-from">Con todo mi corazón y todo mi amor,</p>
+                    <p class="signature-name">De parte de Diego</p>
+                    <div class="signature-hearts">💗 💖 💕 💗 💖</div>
                 </div>
 
                 <!-- Decoración inferior -->
                 <div class="letter-bottom-decoration">
                     <div class="decoration-line"></div>
-                    <div class="decoration-flower">✿</div>
+                    <div class="decoration-heart">💖</div>
                     <div class="decoration-line"></div>
                 </div>
 
-                <!-- Corazones flotantes -->
+                <!-- Mensaje final memorable -->
+                <div class="never-forget reveal-text">
+                    <p class="forget-text">Nunca olvides cuánto te amo</p>
+                    <p class="forget-hearts">❤️ Para siempre tuya ❤️</p>
+                </div>
+
+                <!-- Borde decorativo inferior -->
+                <div class="letter-border-bottom"></div>
+
+                <!-- Corazones flotantes dentro de la carta -->
                 <div id="letterHearts" class="letter-hearts"></div>
             </div>
         </div>
 
-        <!-- Botón para reiniciar (después de abrir) -->
-        <button id="resetBtn" class="reset-btn hidden">Empezar de nuevo</button>
+        <!-- Botón para reiniciar -->
+        <button id="resetBtn" class="reset-btn hidden">
+            💌 Volver a abrir 💌
+        </button>
     </div>
 
     <script src="js/script.js"></script>
